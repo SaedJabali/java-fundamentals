@@ -3,10 +3,6 @@
  */
 package basiclibrary;
 
-// import java.util.Arrays;
-// import java.util.Collection;
-// import java.util.Map;
-// import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -16,8 +12,8 @@ import java.util.Set;
 public class App {
     public static void main(String[] args) {
         int[] dices = roll(6);
-        for (int i = 0; i < dices.length; i++) {
-            System.out.println(dices[i]);
+        for (int dice : dices) {
+            System.out.println(dice);
         }
         System.out.println(containsDuplicates(dices));
         System.out.println(calculatingAverages(dices));
@@ -28,8 +24,8 @@ public class App {
                 {65, 56, 55, 52, 55, 62, 57}
         };
         int[] mainArr = arraysOfArrays(weeklyMonthTemperatures);
-        for (int i = 0; i < mainArr.length; i++) {
-            System.out.println(mainArr[i]);
+        for (int j : mainArr) {
+            System.out.println(j);
         }
         weather(weeklyMonthTemperatures);
         // Lab03 --- most votes.
@@ -42,10 +38,17 @@ public class App {
         votes.add("Shrub");
         votes.add("Bush");
         votes.add("Hedge");
+        votes.add("Hedge");
+        votes.add("Hedge");
+        votes.add("Hedge");
+        votes.add("Hedge");
+        votes.add("Hedge");
+        votes.add("Hedge");
         votes.add("Bush");
 
         tally(votes);
     }
+
     public static int[] roll(int num) {
         int[] dice = new int[num];
         for (int i = 0; i < num; i++) {
@@ -54,6 +57,7 @@ public class App {
         }
         return dice;
     }
+
     public static boolean containsDuplicates(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
@@ -66,38 +70,38 @@ public class App {
         }
         return false;
     }
+
     public static double calculatingAverages(int[] arr) {
         double sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (int j : arr) {
+            sum += j;
         }
-        double avg = sum / (arr.length);
-        return avg;
+        return sum / (arr.length);
     }
+
     public static int[] arraysOfArrays(int[][] arr) {
         int[] tempArr = new int[arr[0].length];
         int sum = 0;
         int temp = 2147483647;
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                sum += arr[i][j];
+        for (int[] ints : arr) {
+            for (int anInt : ints) {
+                sum += anInt;
             }
             if (sum < temp) {
-                for (int j = 0; j < arr[i].length; j++) {
-                    tempArr[j] = arr[i][j];
-                }
+                System.arraycopy(ints, 0, tempArr, 0, ints.length);
             }
         }
         return tempArr;
     }
+
     public static void weather(int[][] arr) {
 
         // Add all numbers into on array
         List<Integer> ArrayWithAllNumbers = new ArrayList<>();
 
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                ArrayWithAllNumbers.add(arr[i][j]);
+        for (int[] ints : arr) {
+            for (int anInt : ints) {
+                ArrayWithAllNumbers.add(anInt);
             }
         }
 
@@ -133,25 +137,19 @@ public class App {
         System.out.println(uniqueTemp);
         System.out.println("This is the length of the hashSet " + uniqueTemp.size());
     }
-
-    // creating the tally function
     public static void tally(List<String> votes) {
-        // declear a string value to give it the name with highest votes
         String winner = "";
-
-        // declear an integer value to compare the votes
         int temp = 0;
 
-        // declear an array list to get rid of the dublicated value
-        Set<String> getRidOfdub = new HashSet<>();
-        getRidOfdub.addAll(votes);
+        Set<String> getRidOfDup = new HashSet<>();
+        getRidOfDup.addAll(votes);
 
-        for (String vote : getRidOfdub) {
+        for (String vote : getRidOfDup) {
 
-            int highiestVotesNumber = Collections.frequency(votes, vote);
+            int highestVotesNumber = Collections.frequency(votes, vote);
 
-            if (highiestVotesNumber > temp) {
-                temp = highiestVotesNumber;
+            if (highestVotesNumber > temp) {
+                temp = highestVotesNumber;
                 winner = vote;
             }
         }
