@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Demo.LibraryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-07-04T12:39:16" hostname="LTUCSTUDENT-L070" time="0.006">
+  <properties/>
+  <testcase name="someLibraryMethodReturnsTrue" classname="Demo.LibraryTest" time="0.002"/>
+  <testcase name="testBk" classname="Demo.LibraryTest" time="0.004"/>
+  <system-out><![CDATA[mac
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
