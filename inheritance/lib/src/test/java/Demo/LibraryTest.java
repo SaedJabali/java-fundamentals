@@ -14,9 +14,6 @@ public class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
     }
-//@Test public void testBk(){
-//    int[] ok = {1,2,3,4,5};
-//    Bk bk = new Bk("mac", ok, ok);
-//    System.out.println("'sidhvj "+ Arrays.toString(bk.getStar()));
-//}
+//@Test public void testBk(){}
+
 }

@@ -6,7 +6,6 @@ public interface Review{
     String author = null;
     int star=0;
 
-//    default void reviewCon(String body,String author,int star)
+    public void reviewCon(String body,String author,int star);
 
-    String toString();
 }
